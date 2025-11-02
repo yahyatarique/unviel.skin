@@ -7,13 +7,11 @@ import {
   Box,
   Button,
   Container,
-  Divider,
   Flex,
   Heading,
   HStack,
-  List,
-  ListIcon,
-  ListItem,
+  Icon,
+  Separator,
   SimpleGrid,
   Stack,
   Text,
@@ -54,7 +52,7 @@ const itemVariants = {
 const floatInPlace = {
   animate: {
     y: [0, -8, 0],
-    transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+    transition: { duration: 6, repeat: Infinity, ease: "easeInOut" as const },
   },
 };
 
@@ -213,16 +211,16 @@ export default function Home() {
               </MotionStack>
 
               <MotionBox variants={itemVariants}>
-                <List spacing={3}>
+                <Stack as="ul" gap={3} listStyleType="none" m={0} p={0}>
                   {heroHighlights.map((highlight) => (
-                    <ListItem key={highlight} display="flex" gap={3} alignItems="flex-start">
-                      <ListIcon as={CheckIcon} color="green.500" mt={1} />
+                    <HStack as="li" key={highlight} align="flex-start" gap={3}>
+                      <Icon as={CheckIcon} color="green.500" mt={1} boxSize={4} />
                       <Text fontSize="sm" className="text-zinc-600 dark:text-zinc-300">
                         {highlight}
                       </Text>
-                    </ListItem>
+                    </HStack>
                   ))}
-                </List>
+                </Stack>
               </MotionBox>
 
               <MotionStack gap={6} variants={itemVariants}>
@@ -240,7 +238,7 @@ export default function Home() {
                   </Link>
                 </Stack>
                 <Stack direction={{ base: "column", md: "row" }} gap={{ base: 4, md: 8 }}>
-                  <Stack spacing={1}>
+                  <Stack gap={1}>
                     <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
                       Clinical clarity
                     </Text>
@@ -248,8 +246,8 @@ export default function Home() {
                       92% noticed brighter skin without dryness*
                     </Text>
                   </Stack>
-                  <Divider display={{ base: "none", md: "block" }} orientation="vertical" borderColor="zinc.200" />
-                  <Stack spacing={1}>
+                  <Separator display={{ base: "none", md: "block" }} orientation="vertical" borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
+                  <Stack gap={1}>
                     <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
                       Everyday wear
                     </Text>
@@ -459,16 +457,16 @@ export default function Home() {
                       {product.summary}
                     </Text>
                   </Stack>
-                  <List spacing={3}>
+                  <Stack as="ul" gap={3} listStyleType="none" m={0} p={0}>
                     {product.benefits.map((benefit) => (
-                      <ListItem key={benefit} display="flex" gap={3} alignItems="flex-start">
-                        <ListIcon as={CheckIcon} color="green.500" mt={1} />
+                      <HStack as="li" key={benefit} align="flex-start" gap={3}>
+                        <Icon as={CheckIcon} color="green.500" mt={1} boxSize={4} />
                         <Text fontSize="sm" className="text-zinc-600 dark:text-zinc-300">
                           {benefit}
                         </Text>
-                      </ListItem>
+                      </HStack>
                     ))}
-                  </List>
+                  </Stack>
                   <Box>
                     <Text fontSize="xs" letterSpacing="wider" textTransform="uppercase" className="text-zinc-400 dark:text-zinc-500">
                       How it feels
@@ -477,16 +475,18 @@ export default function Home() {
                       {product.feel}
                     </Text>
                   </Box>
-                  <Divider borderColor="zinc.200" darkBorderColor="zinc.800" />
+                  <Separator borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
                   <Stack direction={{ base: "column", sm: "row" }} gap={4} align={{ base: "flex-start", sm: "center" }}>
                     <Link href={product.slug}>
                       <Button
                         borderRadius="full"
                         px={6}
                         className="bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-                        rightIcon={<ExternalLinkIcon />}
                       >
-                        View full story
+                        <HStack gap={2}>
+                          <Text>View full story</Text>
+                          <ExternalLinkIcon />
+                        </HStack>
                       </Button>
                     </Link>
                     <Text fontSize="xs" className="text-zinc-400 dark:text-zinc-500">
@@ -519,7 +519,7 @@ export default function Home() {
               className="bg-emerald-500 animate-pulse"
               mt={2}
             />
-            <Stack spacing={1}>
+            <Stack gap={1}>
               <Text fontSize="sm" fontWeight="semibold">
                 Next in the lab: gentle face wash & adaptive moisturizer.
               </Text>
@@ -565,7 +565,7 @@ export default function Home() {
               <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
                 Contact
               </Text>
-              <Stack spacing={3}>
+              <Stack gap={3}>
                 <HStack gap={3}>
                   <EmailIcon boxSize={4} />
                   <Link href="mailto:hello@unveil.skin">
@@ -583,7 +583,7 @@ export default function Home() {
               </Stack>
             </Stack>
           </SimpleGrid>
-          <Divider my={{ base: 8, md: 10 }} borderColor="zinc.200" darkBorderColor="zinc.800" />
+          <Separator my={{ base: 8, md: 10 }} borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
           <Stack direction={{ base: "column", md: "row" }} justify="space-between" gap={4}>
             <Text fontSize="xs" className="text-zinc-500 dark:text-zinc-500">
               © {new Date().getFullYear()} Unveil Labs Pvt. Ltd. All rights reserved.

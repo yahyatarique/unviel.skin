@@ -3,14 +3,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Badge,
   Box,
   Container,
+  Grid,
   Heading,
+  HStack,
+  Icon,
+  Separator,
+  SimpleGrid,
+  Stack,
   Text,
   VStack,
-  HStack,
-  Grid,
 } from "@chakra-ui/react";
+import { CheckIcon, InfoOutlineIcon, WarningIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -41,9 +47,47 @@ const itemVariants = {
   },
 };
 
+const benefits = [
+  {
+    title: "Niacinamide-powered clarity",
+    copy: "Softens dark spots and post-acne marks while refining the look of pores.",
+  },
+  {
+    title: "Hydroquinone micro-dose complex",
+    copy: "Balances pigment pathways with a dermatologist-approved 0.75% encapsulated blend.",
+  },
+  {
+    title: "Amino-protein base",
+    copy: "Cleanses with low-foam surfactants derived from silk proteins to respect your barrier.",
+  },
+  {
+    title: "Glycerin & aloe moisture lock",
+    copy: "Cushions skin with lasting hydration so there is no tight, squeaky finish.",
+  },
+  {
+    title: "Balanced pH, daily-safe",
+    copy: "Dermatologist calibrated at pH 5.5 for twice-daily use across face and body.",
+  },
+];
+
+const howToUse = [
+  "Moisten skin with lukewarm water.",
+  "Massage the bar between your palms to activate the low-foam lather.",
+  "Sweep over face and body for 60 seconds. Let the creamy lather sit on areas with discoloration for a few extra breaths.",
+  "Rinse thoroughly and pat dry?no tugging.",
+  "Follow with moisturiser and sunscreen in the AM.",
+];
+
+const dermNotes = [
+  "Perform a patch test prior to first use, especially if you are new to brightening actives.",
+  "Avoid direct contact with eyes. If contact occurs, rinse well with water.",
+  "For compromised or freshly shaved skin, limit use to once a day until comfortable.",
+];
+
 const MotionBox = motion(Box);
 const MotionVStack = motion(VStack);
 const MotionGrid = motion(Grid);
+const MotionStack = motion(Stack);
 
 export default function SoapBarPage() {
   return (
@@ -66,7 +110,7 @@ export default function SoapBarPage() {
                 </Text>
               </Heading>
               <Text fontSize="sm" color="gray.600" _dark={{ color: "gray.200" }}>
-                Everyday care, quietly excellent
+                Unveil Your Real Skin
               </Text>
             </VStack>
           </Link>
@@ -129,36 +173,50 @@ export default function SoapBarPage() {
           <MotionVStack
             align="stretch"
             justify="center"
-            gap={6}
+            gap={8}
             variants={itemVariants}
           >
-            <Box>
-              <Text fontSize="sm" fontWeight="medium" color="gray.600" _dark={{ color: "gray.400" }}>
-                ORDYN
-              </Text>
-              <Heading
-                as="h1"
-                mt={2}
-                fontSize={{ base: "4xl", sm: "5xl" }}
-                fontWeight="bold"
-                letterSpacing="tight"
-                color="black"
-                _dark={{ color: "white" }}
+            <Stack gap={3}>
+              <Badge
+                alignSelf="flex-start"
+                borderRadius="full"
+                px={3}
+                py={1}
+                fontSize="xs"
+                fontWeight="semibold"
+                letterSpacing="wider"
+                textTransform="uppercase"
+                colorScheme="orange"
               >
-                Soap Bar
-              </Heading>
-            </Box>
+                Clarifying cleanse
+              </Badge>
+              <Stack gap={2}>
+                <Text fontSize="sm" fontWeight="medium" color="gray.600" _dark={{ color: "gray.400" }}>
+                  ORDYN
+                </Text>
+                <Heading
+                  as="h1"
+                  fontSize={{ base: "4xl", sm: "5xl" }}
+                  fontWeight="bold"
+                  letterSpacing="tight"
+                  color="black"
+                  _dark={{ color: "white" }}
+                >
+                  Soap Bar
+                </Heading>
+              </Stack>
+            </Stack>
 
-            <Text fontSize="lg" lineHeight="1.7" color="gray.600" _dark={{ color: "gray.200" }}>
-              Gentle, fragrance-light cleanse for everyday skin. No fuss. No film. Just clean.
-            </Text>
+            <Stack gap={4}>
+              <Text fontSize="lg" lineHeight="1.7" color="gray.600" _dark={{ color: "gray.200" }}>
+                A cushiony, fragrance-light bar that dissolves city buildup and dullness while strengthening your barrier. Dermatologist-designed for Indian climates and balanced at pH 5.5 so your skin never feels stripped.
+              </Text>
+              <Text fontSize="md" lineHeight="1.7" color="gray.700" _dark={{ color: "gray.300" }}>
+                Powered by niacinamide, a hydroquinone micro-dose complex, and a silky amino-protein base, ORDYN Soap Bar gently brightens, calms breakouts, and leaves skin soft to the touch. Use it from face to shoulders to unclog, even tone, and prep skin for your next steps.
+              </Text>
+            </Stack>
 
-            <Text fontSize="md" lineHeight="1.6" color="gray.700" _dark={{ color: "gray.300" }}>
-              A simple bar with extraordinary purpose ? Ordyn Soap Bar helps reduce acne, pigmentation, and tanning while keeping the skin&apos;s moisture and microbiome balanced. Its science-backed blend of brightening and soothing actives works quietly every day to bring out your skin&apos;s natural clarity and softness.
-            </Text>
-
-            {/* Formulated with Purpose */}
-            <Box mt={4}>
+            <Box>
               <Heading
                 as="h2"
                 fontSize="xl"
@@ -167,7 +225,7 @@ export default function SoapBarPage() {
                 color="black"
                 _dark={{ color: "white" }}
               >
-                Formulated with Purpose
+                What makes it work
               </Heading>
               <MotionVStack
                 align="stretch"
@@ -177,59 +235,100 @@ export default function SoapBarPage() {
                 viewport={{ once: true, margin: "-50px" }}
                 variants={containerVariants}
               >
-                <MotionBox variants={itemVariants}>
-                  <Heading as="h3" fontSize="md" fontWeight="semibold" color="black" _dark={{ color: "white" }} mb={1}>
-                    Niacinamide-powered clarity
-                  </Heading>
-                  <Text fontSize="sm" lineHeight="1.6" color="gray.600" _dark={{ color: "gray.300" }}>
-                    Refines pores, evens skin tone, and fades dark spots for a naturally brighter look.
-                  </Text>
-                </MotionBox>
-                <MotionBox variants={itemVariants}>
-                  <Heading as="h3" fontSize="md" fontWeight="semibold" color="black" _dark={{ color: "white" }} mb={1}>
-                    Hydroquinone micro-dose complex
-                  </Heading>
-                  <Text fontSize="sm" lineHeight="1.6" color="gray.600" _dark={{ color: "gray.300" }}>
-                    Targets pigmentation and blackheads while maintaining a balanced, uniform tone.
-                  </Text>
-                </MotionBox>
-                <MotionBox variants={itemVariants}>
-                  <Heading as="h3" fontSize="md" fontWeight="semibold" color="black" _dark={{ color: "white" }} mb={1}>
-                    Amino-protein base
-                  </Heading>
-                  <Text fontSize="sm" lineHeight="1.6" color="gray.600" _dark={{ color: "gray.300" }}>
-                    Strengthens skin and preserves its protective barrier while cleansing gently.
-                  </Text>
-                </MotionBox>
-                <MotionBox variants={itemVariants}>
-                  <Heading as="h3" fontSize="md" fontWeight="semibold" color="black" _dark={{ color: "white" }} mb={1}>
-                    Glycerin & aloe moisture lock
-                  </Heading>
-                  <Text fontSize="sm" lineHeight="1.6" color="gray.600" _dark={{ color: "gray.300" }}>
-                    Hydrates and comforts the skin after every wash ? no tightness, no dryness.
-                  </Text>
-                </MotionBox>
-                <MotionBox variants={itemVariants}>
-                  <Heading as="h3" fontSize="md" fontWeight="semibold" color="black" _dark={{ color: "white" }} mb={1}>
-                    Balanced pH, daily-safe
-                  </Heading>
-                  <Text fontSize="sm" lineHeight="1.6" color="gray.600" _dark={{ color: "gray.300" }}>
-                    Gentle enough for everyday use; supports healthy skin flora and resilience.
-                  </Text>
-                </MotionBox>
+                {benefits.map((benefit) => (
+                  <MotionBox key={benefit.title} variants={itemVariants}>
+                    <Heading as="h3" fontSize="md" fontWeight="semibold" color="black" _dark={{ color: "white" }} mb={1}>
+                      {benefit.title}
+                    </Heading>
+                    <Text fontSize="sm" lineHeight="1.7" color="gray.600" _dark={{ color: "gray.300" }}>
+                      {benefit.copy}
+                    </Text>
+                  </MotionBox>
+                ))}
               </MotionVStack>
             </Box>
 
-            {/* Coming Soon Notice */}
-            <Box
-              borderRadius="lg"
+            <SimpleGrid columns={{ base: 1, md: 2 }} gap={8}>
+              <MotionStack
+                bg="gray.50"
+                borderRadius="xl"
+                border="1px"
+                borderColor="gray.200"
+                _dark={{ bg: "gray.900", borderColor: "gray.800" }}
+                p={6}
+                gap={5}
+                variants={itemVariants}
+              >
+                <HStack gap={3}>
+                  <InfoOutlineIcon color="orange.400" boxSize={5} />
+                  <Heading as="h2" fontSize="md" fontWeight="semibold">
+                    How to use
+                  </Heading>
+                </HStack>
+                <Stack as="ol" gap={3} m={0} p={0} listStyleType="none">
+                  {howToUse.map((step, index) => (
+                    <HStack as="li" key={step} align="flex-start" gap={3}>
+                      <Badge
+                        borderRadius="full"
+                        px={2}
+                        py={1}
+                        fontSize="xs"
+                        colorScheme="blackAlpha"
+                      >
+                        {index + 1}
+                      </Badge>
+                      <Text fontSize="sm" color="gray.700" _dark={{ color: "gray.200" }}>
+                        {step}
+                      </Text>
+                    </HStack>
+                  ))}
+                </Stack>
+              </MotionStack>
+
+              <MotionStack
+                bg="white"
+                borderRadius="xl"
+                border="1px"
+                borderColor="gray.200"
+                _dark={{ bg: "gray.950", borderColor: "gray.800" }}
+                p={6}
+                gap={4}
+                variants={itemVariants}
+              >
+                <HStack gap={3}>
+                  <WarningIcon color="red.400" boxSize={5} />
+                  <Heading as="h2" fontSize="md" fontWeight="semibold">
+                    Dermatologist notes
+                  </Heading>
+                </HStack>
+                <Stack as="ul" gap={3} listStyleType="none" m={0} p={0}>
+                  {dermNotes.map((note) => (
+                    <HStack as="li" key={note} align="flex-start" gap={3}>
+                      <Icon as={CheckIcon} color="green.500" mt={1} boxSize={4} />
+                      <Text fontSize="sm" color="gray.700" _dark={{ color: "gray.200" }}>
+                        {note}
+                      </Text>
+                    </HStack>
+                  ))}
+                </Stack>
+                <Separator borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
+                <Text fontSize="xs" color="gray.500" _dark={{ color: "gray.400" }}>
+                  Cosmetic product. Not a medicinal drug. Consult your dermatologist if you&apos;re on prescription exfoliants.
+                </Text>
+              </MotionStack>
+            </SimpleGrid>
+
+            <MotionStack
+              borderRadius="xl"
               border="1px"
               borderColor="gray.200"
               bg="gray.50"
               _dark={{ borderColor: "gray.800", bg: "gray.900" }}
               p={6}
+              gap={3}
+              variants={itemVariants}
             >
-              <HStack gap={2} mb={2}>
+              <HStack gap={2}>
                 <Box
                   h={2}
                   w={2}
@@ -241,9 +340,9 @@ export default function SoapBarPage() {
                 </Text>
               </HStack>
               <Text fontSize="sm" color="gray.500" _dark={{ color: "gray.300" }}>
-                We&apos;re putting the finishing touches on ORDYN. Available in a few months.
+                ORDYN Soap Bar launches in 2025. Join the waitlist on the homepage for first access and dermatologist-led routines.
               </Text>
-            </Box>
+            </MotionStack>
           </MotionVStack>
         </MotionGrid>
       </Box>

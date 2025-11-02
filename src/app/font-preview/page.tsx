@@ -185,7 +185,7 @@ export default function FontPreview() {
                   _dark={{ color: "gray.200" }}
                   style={{ fontFamily: `'${font.name}', serif` }}
                 >
-                  Everyday care, quietly excellent
+                  Unveil Your Real Skin
                 </Text>
               </VStack>
 
