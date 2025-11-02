@@ -10,8 +10,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Ordyn Soap - unveil.skin",
-  description: "Ordyn. From ordinary to extraordinary. Coming soon.",
+  title: "unveil.skin | Unveil Your Real Skin",
+  description:
+    "Meet ORDYN by unveil.skin: dermatologist-formulated soap bar and daily sunscreen that reveal your real skin with gentle clarity and invisible protection.",
 };
 
 export default function RootLayout({
