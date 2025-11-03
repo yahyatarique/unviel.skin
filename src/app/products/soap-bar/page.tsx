@@ -94,6 +94,7 @@ const MotionStack = motion(Stack);
 export default function SoapBarPage() {
   const [logoSrc, setLogoSrc] = useState("/Logo.svg"); // Default to light mode for SSR
   const resolvedLogoSrc = useColorModeValue("/Logo.svg", "/Logo_Dark.svg");
+  const [showFallback, setShowFallback] = useState(false);
   
   useEffect(() => {
     // Update logo after hydration to match client theme
@@ -151,24 +152,36 @@ export default function SoapBarPage() {
           animate="animate"
           variants={fadeInUp}
         >
-          {/* Product Image */}
+          {/* Product Video */}
           <MotionBox
             position="relative"
             aspectRatio={1}
             overflow="hidden"
             borderRadius="lg"
-            bg="gray.50"
-            _dark={{ bg: "gray.900" }}
+            bg="black"
             variants={itemVariants}
           >
-            <Image
-              src="/Soap_bar.png"
-              alt="Ordyn soap bar"
-              fill
-              style={{ objectFit: "cover" }}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
+            {!showFallback ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                onError={() => setShowFallback(true)}
+              >
+                <source src="/assets/Ordyn-Soap-Main.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src="/Soap_bar.png"
+                alt="Ordyn soap bar"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            )}
           </MotionBox>
 
           {/* Product Details */}
