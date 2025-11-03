@@ -1,0 +1,25 @@
+{
+  "name": "unveil.skin | Unveil Your Real Skin",
+  "short_name": "unveil.skin",
+  "description": "Ordyn by unveil.skin: dermatologist-formulated soap bar and daily sunscreen",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#c88d8d",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait-primary"
+}
+
