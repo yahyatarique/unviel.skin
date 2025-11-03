@@ -53,26 +53,26 @@ const itemVariants = {
 const publicBenefits = [
   {
     title: "Sun Protection",
-    copy: "Broad-spectrum SPF 50 PA+++ shields against UV rays.",
+    copy: "SPF 50 PA+++ protection.",
   },
   {
     title: "Pigmentation",
-    copy: "Helps prevent dark spots and sun-induced discoloration.",
+    copy: "Prevents dark spots.",
   },
   {
     title: "Tanning",
-    copy: "Protects against tanning and maintains even skin tone.",
+    copy: "Prevents tanning.",
   },
   {
     title: "Anti-aging",
-    copy: "Guards against premature aging and fine lines.",
+    copy: "Prevents premature aging.",
   },
 ];
 
 const ingredients = [
   {
     title: "UV filters",
-    copy: "Advanced protection against UVA, UVB, and blue light.",
+    copy: "Protection against UVA, UVB, and blue light.",
   },
   {
     title: "Niacinamide",
@@ -85,17 +85,17 @@ const ingredients = [
 ];
 
 const howToUse = [
-  "Apply as the final step of your AM routine on face, ears, and exposed body.",
-  "Use two finger-lengths for face and neck. Double the dose for extended areas like arms.",
-  "Tap the formula in and spread outward until invisible. Avoid tugging around the eyes.",
-  "Reapply every 2-3 hours outdoors, or after sweating/towelling.",
-  "Pair with ORDYN Soap Bar in the PM to reset your skin without over-cleansing.",
+  "Apply as final step of AM routine.",
+  "Use two finger-lengths for face and neck.",
+  "Tap and spread until invisible.",
+  "Reapply every 2-3 hours outdoors.",
+  "Pair with ORDYN Soap Bar in PM.",
 ];
 
 const dermNotes = [
-  "For acne-prone skin, layer over a lightweight moisturiser to lock actives in place.",
-  "Do not apply on broken skin. Consult your dermatologist if you have photosensitivity disorders.",
-  "Sunscreen is only one part of sun protection. Add hats, shade, and sunglasses when possible.",
+  "Layer over moisturiser for acne-prone skin.",
+  "Avoid broken skin. Consult dermatologist for photosensitivity.",
+  "Combine with hats, shade, and sunglasses.",
 ];
 
 const MotionBox = motion(Box);
@@ -223,7 +223,7 @@ export default function SunscreenPage() {
 
             <Stack gap={4}>
               <Text fontSize="lg" lineHeight="1.7" color="gray.600" _dark={{ color: "gray.200" }}>
-                Serum-light broad-spectrum protection with niacinamide. Zero white cast, breathable finish, perfect under makeup.
+                Broad-spectrum SPF 50 with niacinamide. Zero white cast, perfect under makeup.
               </Text>
             </Stack>
 
@@ -334,7 +334,7 @@ export default function SunscreenPage() {
                 </Stack>
                 <Separator borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
                 <Text fontSize="xs" color="gray.500" _dark={{ color: "gray.400" }}>
-                  Mineral and organic filters combined. Cosmetic preparation; not a treatment for sunburn. Reapply diligently for continued protection.
+                  Cosmetic product. Reapply for continued protection.
                 </Text>
               </MotionStack>
             </SimpleGrid>
@@ -376,6 +376,36 @@ export default function SunscreenPage() {
           </MotionVStack>
         </MotionGrid>
       </Box>
+      
+      {/* Product Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "ORDYN Daily Sunscreen",
+            "description": "Broad-spectrum SPF 50 with niacinamide. Zero white cast, perfect under makeup.",
+            "brand": {
+              "@type": "Brand",
+              "name": "ORDYN"
+            },
+            "category": "Skincare",
+            "image": [
+              "https://unveil.skin/Sunscreen.png"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/PreOrder",
+              "priceCurrency": "INR"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.5"
+            }
+          })
+        }}
+      />
     </Box>
   );
 }
