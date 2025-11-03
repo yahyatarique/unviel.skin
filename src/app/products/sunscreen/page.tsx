@@ -52,23 +52,23 @@ const itemVariants = {
 const benefits = [
   {
     title: "Broad-spectrum SPF 50 PA+++",
-    copy: "Advanced UV filters block UVA, UVB, infrared, and blue light without leaving a cast.",
+    copy: "Advanced UV filters may help block UVA, UVB, infrared, and blue light without leaving a cast.",
   },
   {
     title: "Niacinamide + hyaluronic complex",
-    copy: "Brightens dullness, controls excess oil, and replenishes hydration for glass-like glow.",
+    copy: "May help brighten dullness, potentially control excess oil, and may replenish hydration for a glass-like glow.",
   },
   {
     title: "Ceramide + vitamin E barrier support",
-    copy: "Strengthens the lipid matrix to keep pollutants out and moisture in.",
+    copy: "May help strengthen the lipid matrix to potentially keep pollutants out and moisture in.",
   },
   {
     title: "Peppermint-free cooling tech",
-    copy: "Menthol-free polymers provide a soft chill that calms heat flush without irritating sensitive skin.",
+    copy: "Menthol-free polymers may provide a soft chill that may help calm heat flush without irritating sensitive skin.",
   },
   {
     title: "Non-greasy, breathable wear",
-    copy: "Serum-cream texture melts in under 30 seconds and layers seamlessly under makeup.",
+    copy: "Serum-cream texture may melt in under 30 seconds and may layer seamlessly under makeup.",
   },
 ];
 
@@ -211,10 +211,10 @@ export default function SunscreenPage() {
 
             <Stack gap={4}>
               <Text fontSize="lg" lineHeight="1.7" color="gray.600" _dark={{ color: "gray.200" }}>
-                A serum-light SPF 50 PA+++ that disappears on every tone, stays sweat-resilient in humid heat, and doubles as a barrier-supporting day cream.
+                A serum-light SPF 50 PA+++ that may disappear on every tone, may stay sweat-resilient in humid heat, and may double as a barrier-supporting day cream.
               </Text>
               <Text fontSize="md" lineHeight="1.7" color="gray.700" _dark={{ color: "gray.300" }}>
-                With niacinamide, multi-weight hyaluronic acid, and ceramide antioxidants, ORDYN Daily Sunscreen keeps skin luminous while guarding against UV, pollution, and heat stress. It is tested for compatibility under makeup and for long-hour wear on acne-prone skin.
+                With niacinamide, multi-weight hyaluronic acid, and ceramide antioxidants, ORDYN Daily Sunscreen may help keep skin luminous while potentially guarding against UV, pollution, and heat stress. It is tested for compatibility under makeup and for long-hour wear on acne-prone skin.
               </Text>
             </Stack>
 

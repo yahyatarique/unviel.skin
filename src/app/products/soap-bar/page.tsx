@@ -52,19 +52,19 @@ const itemVariants = {
 const benefits = [
   {
     title: "Niacinamide-powered clarity",
-    copy: "Softens dark spots and post-acne marks while refining the look of pores.",
+    copy: "May help soften dark spots and post-acne marks while potentially refining the look of pores.",
   },
   {
     title: "Hydroquinone micro-dose complex",
-    copy: "Balances pigment pathways with a dermatologist-approved 0.75% encapsulated blend.",
+    copy: "May help balance pigment pathways with a dermatologist-approved 0.75% encapsulated blend.",
   },
   {
     title: "Amino-protein base",
-    copy: "Cleanses with low-foam surfactants derived from silk proteins to respect your barrier.",
+    copy: "May help cleanse with low-foam surfactants derived from silk proteins that may respect your barrier.",
   },
   {
     title: "Glycerin & aloe moisture lock",
-    copy: "Cushions skin with lasting hydration so there is no tight, squeaky finish.",
+    copy: "May help cushion skin with lasting hydration that may prevent a tight, squeaky finish.",
   },
   {
     title: "Balanced pH, daily-safe",
@@ -211,10 +211,10 @@ export default function SoapBarPage() {
 
             <Stack gap={4}>
               <Text fontSize="lg" lineHeight="1.7" color="gray.600" _dark={{ color: "gray.200" }}>
-                A cushiony, fragrance-light bar that dissolves city buildup and dullness while strengthening your barrier. Dermatologist-designed for Indian climates and balanced at pH 5.5 so your skin never feels stripped.
+                A cushiony, fragrance-light bar that may help dissolve city buildup and dullness while potentially strengthening your barrier. Dermatologist-designed for Indian climates and balanced at pH 5.5 so your skin may never feel stripped.
               </Text>
               <Text fontSize="md" lineHeight="1.7" color="gray.700" _dark={{ color: "gray.300" }}>
-                Powered by niacinamide, a hydroquinone micro-dose complex, and a silky amino-protein base, ORDYN Soap Bar gently brightens, calms breakouts, and leaves skin soft to the touch. Use it from face to shoulders to unclog, even tone, and prep skin for your next steps.
+                Powered by niacinamide, a hydroquinone micro-dose complex, and a silky amino-protein base, ORDYN Soap Bar may help gently brighten, potentially calm breakouts, and may leave skin soft to the touch. Use it from face to shoulders to potentially unclog, even tone, and prep skin for your next steps.
               </Text>
             </Stack>
 

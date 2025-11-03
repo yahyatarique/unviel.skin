@@ -59,15 +59,14 @@ const floatInPlace = {
 };
 
 const heroHighlights = [
-  "Dermatologist-developed actives tuned for humid, city climates",
-  "pH 5.5 cleansing that respects your barrier",
-  "Invisible SPF that shields against sun, heat, and pollution",
+  "Dermatologist-developed for humid climates",
+  "SPF that may help shield against sun & pollution",
 ];
 
 const aboutPillars = [
   {
     title: "Simplicity with science",
-    copy: "We obsess over essential actives in optimal percentages so every product earns its place on your sink.",
+    copy: "We focus on essential actives in optimal percentages so every product may earn its place on your sink.",
   },
   {
     title: "Human, not hype",
@@ -75,7 +74,7 @@ const aboutPillars = [
   },
   {
     title: "Built for real life",
-    copy: "Tested across varied Indian skin tones and routines so your skin looks like itself—only clearer, calmer, steadier.",
+    copy: "Tested across varied Indian skin tones and routines so your skin may look like itself—only potentially clearer, calmer, steadier.",
   },
 ];
 
@@ -87,11 +86,11 @@ const productCards = [
     alt: "Ordyn soap bar",
     ribbon: "Clarifying Cleanse",
     summary:
-      "Amino-acid surfactants lift buildup while niacinamide and a micro-dose brightening complex fade dullness without disrupting your barrier.",
+      "Amino-acid surfactants may help lift buildup while niacinamide and a micro-dose brightening complex may help fade dullness without disrupting your barrier.",
     benefits: [
-      "Balances skin flora with amino-protein base and prebiotic humectants",
-      "Visibly refines tone with niacinamide + hydroquinone micro-dose complex",
-      "Cools and comforts with glycerin, aloe, and vitamin B5",
+      "May help balance skin flora with amino-protein base and prebiotic humectants",
+      "May help refine tone with niacinamide + hydroquinone micro-dose complex",
+      "May help cool and comfort with glycerin, aloe, and vitamin B5",
     ],
     feel: "Low-foam, cushiony lather",
   },
@@ -102,11 +101,11 @@ const productCards = [
     alt: "Ordyn daily sunscreen",
     ribbon: "Invisible SPF 50 PA+++",
     summary:
-      "Serum-light shield delivers broad-spectrum UV/IR/blue light defense with niacinamide, ceramides, and antioxidants for glow minus the grease.",
+      "Serum-light formula may help provide broad-spectrum UV/IR/blue light defense with niacinamide, ceramides, and antioxidants that may help promote glow minus the grease.",
     benefits: [
-      "Zero white cast with UV filters that melt into every tone",
-      "Hydrates and strengthens with niacinamide, hyaluronic complex, and ceramides",
-      "Sets to a breathable satin finish under makeup or on bare skin",
+      "Zero white cast with UV filters that may blend into every tone",
+      "May help hydrate and strengthen with niacinamide, hyaluronic complex, and ceramides",
+      "May set to a breathable satin finish under makeup or on bare skin",
     ],
     feel: "Featherlight serum-cream",
   },
@@ -162,10 +161,25 @@ export default function Home() {
           <Box
             position="absolute"
             inset={0}
+            opacity={0.08}
+            zIndex={0}
+          >
+            <Image
+              src="/assets/product-bg.jpg"
+              alt=""
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="100vw"
+            />
+          </Box>
+          <Box
+            position="absolute"
+            inset={0}
             pointerEvents="none"
             opacity={0.6}
             style={{ background: 'radial-gradient(circle at top, rgba(200, 141, 141, 0.15), transparent 55%)' }}
             className="dark:bg-[radial-gradient(circle_at_top,_rgba(200,141,141,0.18),_transparent_60%)]"
+            zIndex={0}
           />
           <MotionBox
             position="absolute"
@@ -219,7 +233,7 @@ export default function Home() {
                   lineHeight="1.7"
                   className="text-zinc-600 dark:text-zinc-300"
                 >
-                  Dermatologist-guided essentials that keep skin clear, calm, and future-proof. Just two daily steps—clarify with the Ordyn Soap Bar, defend with the Ordyn Daily Sunscreen.
+                  Dermatologist-guided essentials. Two daily steps that may help support clear, calm skin.
                 </Text>
               </MotionStack>
 
@@ -250,28 +264,6 @@ export default function Home() {
                     </Button>
                   </Link>
                 </Stack>
-                <Stack direction={{ base: "column", md: "row" }} gap={{ base: 4, md: 8 }}>
-                  <Stack gap={1}>
-                    <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
-                      Clinical clarity
-                    </Text>
-                    <Text fontSize="sm" fontWeight="medium" className="text-zinc-700 dark:text-zinc-200">
-                      92% noticed brighter skin without dryness*
-                    </Text>
-                  </Stack>
-                  <Separator display={{ base: "none", md: "block" }} orientation="vertical" borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
-                  <Stack gap={1}>
-                    <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
-                      Everyday wear
-                    </Text>
-                    <Text fontSize="sm" fontWeight="medium" className="text-zinc-700 dark:text-zinc-200">
-                      Sweat-resistant, fragrance-light, makeup-friendly
-                    </Text>
-                  </Stack>
-                </Stack>
-                <Text fontSize="xs" className="text-zinc-400 dark:text-zinc-500">
-                  *32-person self-evaluation after 6 weeks of continuous use.
-                </Text>
               </MotionStack>
             </MotionStack>
 
@@ -285,59 +277,38 @@ export default function Home() {
                 position="relative"
                 borderRadius="3xl"
                 overflow="hidden"
-                h={{ base: "360px", md: "460px" }}
+                h={{ base: "480px", md: "640px" }}
                 w="full"
-                maxW="360px"
-                style={{ background: 'linear-gradient(to bottom right, rgba(200, 141, 141, 0.1), white, white)' }}
-                className="dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900"
                 boxShadow="0px 40px 80px -40px rgba(15, 23, 42, 0.35)"
               >
                 <Image
-                  src="/Sunscreen.png"
-                  alt="Ordyn daily sunscreen"
+                  src="/assets/Lifetyle-2.jpg"
+                  alt="Ordyn products lifestyle"
                   fill
                   style={{ objectFit: "cover" }}
-                  sizes="(max-width: 768px) 80vw, 360px"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
-              </MotionBox>
-
-              <MotionBox
-                position="absolute"
-                bottom={-10}
-                left={{ base: "-10", sm: "-12" }}
-                borderRadius="2xl"
-                overflow="hidden"
-                w={{ base: "160px", sm: "200px" }}
-                h={{ base: "160px", sm: "200px" }}
-                style={{ background: 'linear-gradient(to top right, white, rgba(200, 141, 141, 0.05))' }}
-                className="dark:from-zinc-950 dark:to-zinc-900"
-                boxShadow="0px 24px 50px -30px rgba(15, 23, 42, 0.35)"
-                variants={floatInPlace}
-                animate="animate"
-              >
-                <Image
-                  src="/Soap_bar.png"
-                  alt="Ordyn soap bar"
-                  fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(max-width: 768px) 40vw, 200px"
+                <Box
+                  position="absolute"
+                  inset={0}
+                  bgGradient="linear(to-b, transparent 0%, black/40 100%)"
                 />
-              </MotionBox>
-
-              <MotionBox
-                position="absolute"
-                top={6}
-                right={{ base: -2, sm: -8 }}
-                borderRadius="xl"
-                px={5}
-                py={3}
-                className="bg-black/80 backdrop-blur text-white"
-                fontSize="sm"
-                variants={floatInPlace}
-                animate="animate"
-              >
-                Dermatologist guided • Cruelty free • Vegan
+                <MotionBox
+                  position="absolute"
+                  bottom={6}
+                  left={6}
+                  right={6}
+                  borderRadius="xl"
+                  px={5}
+                  py={3}
+                  className="bg-black/80 backdrop-blur text-white"
+                  fontSize="sm"
+                  variants={floatInPlace}
+                  animate="animate"
+                >
+                  Dermatologist guided • Cruelty free • Vegan
+                </MotionBox>
               </MotionBox>
             </MotionFlex>
           </MotionSimpleGrid>
@@ -351,32 +322,50 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <Stack maxW="3xl" mx="auto" textAlign="center" gap={4}>
-            <Badge
-              alignSelf="center"
-              borderRadius="full"
-              px={3}
-              py={1}
-              fontSize="xs"
-              fontWeight="semibold"
-              letterSpacing="wider"
-              textTransform="uppercase"
-              className="bg-zinc-200/60 text-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-300"
+          <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 8, md: 12 }} alignItems="center">
+            <MotionBox
+              position="relative"
+              borderRadius="3xl"
+              overflow="hidden"
+              h={{ base: "400px", md: "500px" }}
+              variants={itemVariants}
             >
-              Our Philosophy
-            </Badge>
-            <Heading
-              as="h2"
-              fontSize={{ base: "2.5xl", md: "3xl" }}
-              fontWeight="semibold"
-              className="text-black dark:text-white"
-            >
-              Quiet formulas. Loud results.
-            </Heading>
-            <Text fontSize={{ base: "md", md: "lg" }} lineHeight="1.8" className="text-zinc-600 dark:text-zinc-300">
-              unveil<Text as="span" className="text-zinc-400">.skin</Text> was created to bridge clinical efficacy and sensorial ease. No ten-step routines, no harsh exfoliants—just considered essentials that make your skin feel like home.
-            </Text>
-          </Stack>
+              <Image
+                src="/assets/Products-Lifestlye.png"
+                alt="Ordyn products lifestyle"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </MotionBox>
+            
+            <Stack gap={4}>
+              <Badge
+                alignSelf="flex-start"
+                borderRadius="full"
+                px={3}
+                py={1}
+                fontSize="xs"
+                fontWeight="semibold"
+                letterSpacing="wider"
+                textTransform="uppercase"
+                className="bg-zinc-200/60 text-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-300"
+              >
+                Our Philosophy
+              </Badge>
+              <Heading
+                as="h2"
+                fontSize={{ base: "2.5xl", md: "3xl" }}
+                fontWeight="semibold"
+                className="text-black dark:text-white"
+              >
+                Quiet formulas. Loud results.
+              </Heading>
+              <Text fontSize={{ base: "md", md: "lg" }} lineHeight="1.8" className="text-zinc-600 dark:text-zinc-300">
+                unveil<Text as="span" className="text-zinc-400">.skin</Text> bridges clinical efficacy and sensorial ease. No ten-step routines—just essentials that may help your skin feel like home.
+              </Text>
+            </Stack>
+          </SimpleGrid>
 
           <SimpleGrid columns={{ base: 1, md: 3 }} gap={{ base: 6, md: 8 }} mt={{ base: 10, md: 14 }}>
             {aboutPillars.map((pillar) => (
@@ -408,28 +397,54 @@ export default function Home() {
           viewport={{ once: true, margin: "-120px" }}
           variants={containerVariants}
         >
-          <MotionStack gap={4} align="center" textAlign="center" variants={itemVariants}>
-            <Badge
-              borderRadius="full"
-              px={3}
-              py={1}
-              fontSize="xs"
-              fontWeight="semibold"
-              letterSpacing="wider"
-              textTransform="uppercase"
-              className="bg-zinc-200/70 text-zinc-700 dark:bg-zinc-800/70 dark:text-zinc-300"
+          <MotionBox
+            position="relative"
+            borderRadius="3xl"
+            overflow="hidden"
+            h={{ base: "280px", md: "380px" }}
+            mb={{ base: 12, md: 16 }}
+            variants={itemVariants}
+          >
+            <Image
+              src="/assets/product-bg.jpg"
+              alt="Ordyn products"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="100vw"
+            />
+            <Box
+              position="absolute"
+              inset={0}
+              bgGradient="linear(to-b, black/60 0%, black/40 100%)"
+            />
+            <Stack
+              position="absolute"
+              inset={0}
+              align="center"
+              justify="center"
+              gap={4}
+              textAlign="center"
+              px={6}
             >
-              The Ordyn System
-            </Badge>
-            <Heading as="h2" fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" className="text-black dark:text-white">
-              Two essentials. One ritual.
-            </Heading>
-            <Text maxW="2xl" fontSize={{ base: "md", md: "lg" }} lineHeight="1.8" className="text-zinc-600 dark:text-zinc-300">
-              Layer ORDYN in the morning and night for clarity that lasts. Keep it on display—these are the products you reach for every single day.
-            </Text>
-          </MotionStack>
+              <Badge
+                borderRadius="full"
+                px={3}
+                py={1}
+                fontSize="xs"
+                fontWeight="semibold"
+                letterSpacing="wider"
+                textTransform="uppercase"
+                className="bg-white/20 backdrop-blur text-white"
+              >
+                The Ordyn System
+              </Badge>
+              <Heading as="h2" fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" className="text-white">
+                Two essentials. One ritual.
+              </Heading>
+            </Stack>
+          </MotionBox>
 
-          <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 10, md: 14 }} mt={{ base: 12, md: 16 }}>
+          <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 10, md: 14 }}>
             {productCards.map((product, index) => (
               <MotionBox
                 key={product.name}
@@ -440,7 +455,7 @@ export default function Home() {
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.35 }}
               >
-                <Box position="relative" h={{ base: "230px", md: "260px" }}>
+                <Box position="relative" h={{ base: "320px", md: "380px" }}>
                   <Image
                     src={product.image}
                     alt={product.alt}
@@ -468,7 +483,7 @@ export default function Home() {
                     <Heading as="h3" fontSize={{ base: "2xl", md: "2.5xl" }} fontWeight="semibold" className="text-black dark:text-white">
                       {product.name}
                     </Heading>
-                    <Text fontSize="md" lineHeight="1.7" className="text-zinc-600 dark:text-zinc-300">
+                    <Text fontSize="sm" lineHeight="1.7" className="text-zinc-600 dark:text-zinc-300">
                       {product.summary}
                     </Text>
                   </Stack>
@@ -549,8 +564,8 @@ export default function Home() {
       {/* Footer */}
       <MotionBox as="footer" borderTop="1px" className="border-zinc-200 dark:border-zinc-800" py={{ base: 10, md: 14 }}>
         <Container maxW="7xl" px={{ base: 4, md: 6 }}>
-          <SimpleGrid columns={{ base: 1, md: 4 }} gap={{ base: 8, md: 10 }}>
-            <Stack gap={3}>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={{ base: 8, md: 10 }} mb={{ base: 8, md: 10 }}>
+            <Stack gap={4}>
               <Image
                 src={logoSrc}
                 alt="unveil.skin"
@@ -562,51 +577,141 @@ export default function Home() {
               <Text fontSize="sm" className="text-zinc-600 dark:text-zinc-400">
                 Formulated and crafted in India. Dermatologist-guided, clinically vetted, and mindful of the planet.
               </Text>
+              <Box position="relative" h="120px" w="full" borderRadius="lg" overflow="hidden" mt={2}>
+                <Image
+                  src="/assets/Products-Lifestlye.png"
+                  alt="Ordyn products"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+              </Box>
             </Stack>
-            <Stack gap={2}>
-              <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
-                Manufactured by
-              </Text>
-              <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300">
-                Unveil Labs Pvt. Ltd.
-                <br />Plot 18, Sector 18, Navi Mumbai, MH 400703
-              </Text>
-            </Stack>
-            <Stack gap={2}>
+            <Stack gap={4}>
               <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
                 Marketed by
               </Text>
               <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300">
-                Ordyn Co. (India)
-                <br />F-204, Koramangala, Bengaluru, KA 560034
+                Unveil Skin
+                <br />New Delhi, India
+              </Text>
+              
+              <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400" mt={4}>
+                Manufactured by
+              </Text>
+              <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300">
+                XYXX Cosmo
+                <br />Noida Industrial Area, Uttar Pradesh
               </Text>
             </Stack>
-            <Stack gap={3}>
+            <Stack gap={4}>
               <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
                 Contact
               </Text>
-              <Stack gap={3}>
-                <HStack gap={3}>
-                  <EmailIcon boxSize={4} />
-                  <Link href="mailto:hello@unveil.skin">
-                    <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300 underline-offset-4 hover:underline">
-                      hello@unveil.skin
-                    </Text>
-                  </Link>
-                </HStack>
-                <HStack gap={3}>
-                  <PhoneIcon boxSize={4} />
-                  <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300">
-                    +91 80 0000 0000
+              <HStack gap={3}>
+                <EmailIcon boxSize={4} />
+                <Link href="mailto:queries@unveil.skin">
+                  <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300 underline-offset-4 hover:underline">
+                    queries@unveil.skin
                   </Text>
-                </HStack>
+                </Link>
+              </HStack>
+
+              <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400" mt={4}>
+                Policies
+              </Text>
+              <Stack gap={2}>
+                <Link href="/policies/privacy">
+                  <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300 underline-offset-4 hover:underline">
+                    Privacy Policy
+                  </Text>
+                </Link>
+                <Link href="/policies/terms">
+                  <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300 underline-offset-4 hover:underline">
+                    Terms & Conditions
+                  </Text>
+                </Link>
+                <Link href="/policies/refund">
+                  <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300 underline-offset-4 hover:underline">
+                    Refund Policy
+                  </Text>
+                </Link>
+                <Link href="/policies/shipping">
+                  <Text fontSize="sm" className="text-zinc-700 dark:text-zinc-300 underline-offset-4 hover:underline">
+                    Shipping Policy
+                  </Text>
+                </Link>
               </Stack>
+            </Stack>
+            <Stack gap={4}>
+              <Text fontSize="xs" fontWeight="semibold" letterSpacing="widest" textTransform="uppercase" className="text-zinc-500 dark:text-zinc-400">
+                We Accept
+              </Text>
+              <HStack gap={2} flexWrap="wrap">
+                <Box
+                  px={3}
+                  py={1.5}
+                  borderRadius="md"
+                  className="bg-zinc-100 dark:bg-zinc-800"
+                  fontSize="xs"
+                  fontWeight="semibold"
+                  color="zinc.700"
+                  _dark={{ color: "zinc.300" }}
+                >
+                  UPI
+                </Box>
+                <Box
+                  px={3}
+                  py={1.5}
+                  borderRadius="md"
+                  className="bg-zinc-100 dark:bg-zinc-800"
+                  fontSize="xs"
+                  fontWeight="semibold"
+                  color="zinc.700"
+                  _dark={{ color: "zinc.300" }}
+                >
+                  RuPay
+                </Box>
+                <Box
+                  px={3}
+                  py={1.5}
+                  borderRadius="md"
+                  className="bg-zinc-100 dark:bg-zinc-800"
+                  fontSize="xs"
+                  fontWeight="semibold"
+                  color="zinc.700"
+                  _dark={{ color: "zinc.300" }}
+                >
+                  Visa
+                </Box>
+                <Box
+                  px={3}
+                  py={1.5}
+                  borderRadius="md"
+                  className="bg-zinc-100 dark:bg-zinc-800"
+                  fontSize="xs"
+                  fontWeight="semibold"
+                  color="zinc.700"
+                  _dark={{ color: "zinc.300" }}
+                >
+                  Mastercard
+                </Box>
+              </HStack>
+              <Box position="relative" h="100px" w="full" borderRadius="lg" overflow="hidden" mt={2}>
+                <Image
+                  src="/assets/Lifetyle-2.jpg"
+                  alt="Ordyn lifestyle"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                />
+              </Box>
             </Stack>
           </SimpleGrid>
           <Separator my={{ base: 8, md: 10 }} borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
           <Stack direction={{ base: "column", md: "row" }} justify="space-between" gap={4}>
             <Text fontSize="xs" className="text-zinc-500 dark:text-zinc-500">
-              © {new Date().getFullYear()} Unveil Labs Pvt. Ltd. All rights reserved.
+              © {new Date().getFullYear()} Unveil Skin. All rights reserved.
             </Text>
             <Text fontSize="xs" className="text-zinc-400 dark:text-zinc-500">
               *Products are cosmetic formulations. Not a substitute for medical advice.
