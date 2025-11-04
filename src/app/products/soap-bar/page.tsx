@@ -53,26 +53,26 @@ const itemVariants = {
 const publicBenefits = [
   {
     title: "Acne",
-    copy: "Helps clear breakouts and prevent future ones.",
+    copy: "Clears breakouts.",
   },
   {
     title: "Pigmentation",
-    copy: "Reduces dark spots and evens skin tone.",
+    copy: "Reduces dark spots.",
   },
   {
     title: "Tanning",
-    copy: "Helps fade sun-induced tan and discoloration.",
+    copy: "Fades sun tan.",
   },
   {
     title: "Dullness",
-    copy: "Reveals brighter, clearer skin.",
+    copy: "Brightens skin.",
   },
 ];
 
 const ingredients = [
   {
     title: "Niacinamide",
-    copy: "Brightens and refines pores.",
+    copy: "Brightens skin and refines pores.",
   },
   {
     title: "Hydroquinone micro-dose",
@@ -80,22 +80,22 @@ const ingredients = [
   },
   {
     title: "Amino-protein base",
-    copy: "Gentle, barrier-respecting cleanser.",
+    copy: "Gentle cleanser.",
   },
 ];
 
 const howToUse = [
   "Moisten skin with lukewarm water.",
-  "Massage the bar between your palms to activate the low-foam lather.",
-  "Sweep over face and body for 60 seconds. Let the creamy lather sit on areas with discoloration for a few extra breaths.",
-  "Rinse thoroughly and pat dry?no tugging.",
-  "Follow with moisturiser and sunscreen in the AM.",
+  "Massage bar between palms to create lather.",
+  "Apply to face and body for 60 seconds.",
+  "Rinse thoroughly and pat dry.",
+  "Follow with moisturiser and sunscreen.",
 ];
 
 const dermNotes = [
-  "Perform a patch test prior to first use, especially if you are new to brightening actives.",
-  "Avoid direct contact with eyes. If contact occurs, rinse well with water.",
-  "For compromised or freshly shaved skin, limit use to once a day until comfortable.",
+  "Patch test before first use.",
+  "Avoid contact with eyes.",
+  "Limit use on compromised skin.",
 ];
 
 const MotionBox = motion(Box);
@@ -236,7 +236,7 @@ export default function SoapBarPage() {
 
             <Stack gap={4}>
               <Text fontSize="lg" lineHeight="1.7" color="gray.600" _dark={{ color: "gray.200" }}>
-                A gentle, low-foam cleanser powered by amino-acid surfactants to lift buildup without stripping your skin. Infused with niacinamide and a micro-dose brightening complex to reveal clearer, more balanced skin.
+                Gentle cleanser with niacinamide and brightening actives for clearer, balanced skin.
               </Text>
             </Stack>
 
@@ -347,7 +347,7 @@ export default function SoapBarPage() {
                 </Stack>
                 <Separator borderColor="gray.200" _dark={{ borderColor: "gray.800" }} />
                 <Text fontSize="xs" color="gray.500" _dark={{ color: "gray.400" }}>
-                  Cosmetic product. Not a medicinal drug. Consult your dermatologist if you&apos;re on prescription exfoliants.
+                  Cosmetic product. Consult your dermatologist if on prescription exfoliants.
                 </Text>
               </MotionStack>
             </SimpleGrid>
@@ -389,6 +389,37 @@ export default function SoapBarPage() {
           </MotionVStack>
         </MotionGrid>
       </Box>
+      
+      {/* Product Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "ORDYN Soap Bar",
+            "description": "Gentle cleanser with niacinamide and brightening actives for clearer, balanced skin.",
+            "brand": {
+              "@type": "Brand",
+              "name": "ORDYN"
+            },
+            "category": "Skincare",
+            "image": [
+              "https://unveil.skin/Soap_bar.png",
+              "https://unveil.skin/assets/Ordyn-Soap-Main.mp4"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/PreOrder",
+              "priceCurrency": "INR"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.5"
+            }
+          })
+        }}
+      />
     </Box>
   );
 }
